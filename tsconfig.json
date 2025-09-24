@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2020", // Cible un JavaScript moderne compatible avec les navigateurs
+    "module": "es2020", // Utilise les modules ES modernes
+    "moduleResolution": "node",
+    "strict": true, // Active toutes les vérifications de type strictes (très important !)
+    "esModuleInterop": true,
+    "outDir": "dist", // Spécifie le dossier de sortie (même si Webpack s'en chargera)
+    "rootDir": "src", // Le code source est dans src/
+    "typeRoots": ["./node_modules/@types"] // Indique où trouver les types
+  },
+  "include": [
+    "src/**/*.ts" // Inclut tous les fichiers .ts dans le dossier src
+  ]
+}
