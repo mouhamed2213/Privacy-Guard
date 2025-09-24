@@ -2,9 +2,10 @@
   "manifest_version": 3,
   "name": "Privacy Guard (Clean Start)",
   "version": "1.0.0",
-  "permissions": ["declarativeNetRequest"],
+  "permissions": ["declarativeNetRequest"], 
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   }
 }
+
