@@ -16,7 +16,7 @@ __webpack_require__.r(__webpack_exports__);
  Description : Ce fichier sera notre "spécialiste des règles".
   Son seul travail sera de télécharger, d'analyser et de formater les listes de blocage pour les donner au navigateur.*/
 // list of url to block 
-const BLOCKLIST_URL = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/ hosts';
+const BLOCKLIST_URL = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts';
 const RULE_ID_OFFSET = 1000;
 // download and parse block list 
 const fetchAndParseBlockList = async () => {
@@ -33,7 +33,7 @@ const fetchAndParseBlockList = async () => {
             .filter((d) => d.startsWith('0.0.0.0'))
             .map(line => line.split(' ')[1]) // get the domain after the withspace
             .filter(Boolean); // remove  empty line
-        console.log(`Total domain downloaded ${domains.filter}`);
+        console.log(`Total domain downloaded ${domains.length}`);
         return domains;
     }
     catch (error) {
@@ -142,7 +142,7 @@ console.log("Privacy Guard Service started !");
 chrome.runtime.onInstalled.addListener((detail) => {
     // check if it's the first installation 
     if (detail.reason === 'install') {
-        console.log('isntallation of block list');
+        console.log('istallation of block list');
         (0,_rule_manager__WEBPACK_IMPORTED_MODULE_0__.updateBlockingRules)();
     }
 });

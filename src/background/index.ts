@@ -7,7 +7,7 @@ chrome.runtime.onInstalled.addListener((detail) => {
 
   // check if it's the first installation 
   if(detail.reason === 'install') {
-    console.log('isntallation of block list');
+    console.log('istallation of block list');
     updateBlockingRules();
   }
 }) 

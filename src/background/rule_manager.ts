@@ -3,7 +3,7 @@
   Son seul travail sera de télécharger, d'analyser et de formater les listes de blocage pour les donner au navigateur.*/
   
   // list of url to block 
-  const BLOCKLIST_URL = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/ hosts';
+  const BLOCKLIST_URL = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts';
   const RULE_ID_OFFSET = 1000;
 
   // download and parse block list 
@@ -25,7 +25,7 @@
         .map(line => line.split(' ')[1]) // get the domain after the withspace
         .filter(Boolean) // remove  empty line
         
-        console.log(`Total domain downloaded ${domains.filter}`)
+        console.log(`Total domain downloaded ${domains.length}`)
         return domains
     }catch (error) {
         console.error("Can't to donwload the domain list", error);
