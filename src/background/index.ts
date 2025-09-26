@@ -1,27 +1,20 @@
+import { updateBlockingRules } from './rule_manager';
+
+console.log("Privacy Guard Service started !");
+
+// checke if the extention has been installed 
+chrome.runtime.onInstalled.addListener((detail) => {
+
+  // check if it's the first installation 
+  if(detail.reason === 'install') {
+    console.log('isntallation of block list');
+    updateBlockingRules();
+  }
+}) 
+
+
 /** Notre code actuel (src/background/index.ts) est censé bloquer toute tentative de navigation 
  * vers le site example.com. Nous allons vérifier si c'est bien le cas.*/
-
-console.log("Privacy Guard Service Worker a démarré !");
-
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.declarativeNetRequest.updateDynamicRules({
-    addRules: [
-      {
-        id: 1,
-        priority: 1,
-        action: { type: 'block' },
-        condition: {
-          urlFilter: '||example.com',
-          resourceTypes: ['main_frame'],
-        },
-      },
-    ],
-    removeRuleIds: [1]
-  }, () => {
-    console.log("Règle de test pour example.com installée.");
-  });
-});
-
 
 /*
 Description : C'est le cerveau de votre extension. Ce script s'exécute en arrière-plan, 
